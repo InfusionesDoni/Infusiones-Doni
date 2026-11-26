@@ -1,0 +1,338 @@
+
+/* =================================
+   1. COLORES DE LA MARCA
+================================= */
+
+:root {
+    --lila: #DCD5E8;
+    --verde: #C9D8C1;
+    --blanco: #F8F6F2;
+    --morado: #77708D;
+    --texto: #454348;
+}
+
+/* =================================
+   2. ESTILO GENERAL
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--blanco);
+    font-family: Arial, sans-serif;
+    color: var(--texto);
+}
+
+h1, h2, h3 {
+    color: var(--morado);
+    text-align: center;
+}
+
+/* =================================
+   3. ENCABEZADO
+================================= */
+
+.encabezado {
+    display: grid;
+    grid-template-columns: 150px 1fr 150px;
+    align-items: center;
+    background-color: white;
+    padding: 10px 35px;
+    border-bottom: 3px solid var(--lila);
+}
+
+.encabezado img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.encabezado h1 {
+    text-align: center;
+    color: var(--morado);
+    font-family: Georgia, serif;
+    font-size: 38px;
+    margin: 0;
+}
+
+/* =================================
+   4. MISION, VISION Y VALORES (MVQ)
+================================= */
+
+.MVQ {
+    max-width: 1000px;
+    margin: 45px auto;
+    padding: 35px;
+
+    background-color: #E8E3EF;
+    border: 2px solid var(--lila);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(119,112,141,0.12);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-areas:
+        "mision vision"
+        "valores valores"
+        "quienes esencia";
+
+    gap: 25px;
+    align-items: center;
+}
+
+/* BLOQUES GENERALES */
+
+.MVQ .bloque {
+    text-align: center;
+    padding: 15px;
+}
+
+.MVQ .bloque h2,
+.MVQ .bloque h3,
+.MVQ .valores h2,
+.MVQ .valores h3 {
+    color: var(--morado);
+    font-family: Georgia, serif;
+    font-size: 24px;
+}
+
+.MVQ .bloque p {
+    color: var(--texto);
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* MISION */
+
+.MVQ > .bloque:nth-child(1) {
+    grid-area: mision;
+}
+
+/* VISION */
+
+.MVQ > .bloque:nth-child(2) {
+    grid-area: vision;
+}
+
+/* VALORES CENTRADOS */
+
+.MVQ > .valores {
+    grid-area: valores;
+    width: 100%;
+    text-align: center;
+    justify-self: stretch;
+}
+
+.MVQ .valores ul {
+    display: block;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding-left: 25px;
+    text-align: left;
+    color: var(--texto);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.MVQ .valores li {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.MVQ .valores strong {
+    color: var(--morado);
+}
+
+/* QUIENES SOMOS */
+
+.MVQ > .bloque:nth-child(4) {
+    grid-area: quienes;
+}
+
+/* NUESTRA ESENCIA */
+
+.MVQ > .bloque:nth-child(5) {
+    grid-area: esencia;
+}
+
+/* =================================
+   5. PRODUCTOS
+================================= */
+
+/* CONTENEDOR GENERAL */
+
+body > div:has(> .productos) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1250px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* TITULO */
+
+body > div:has(> .productos) > h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--morado);
+    font-size: 32px;
+    margin: 0 0 15px;
+}
+
+/* TARJETAS */
+
+.productos {
+    width: 100%;
+    background-color: white;
+    padding: 25px;
+    border: 2px solid var(--lila);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(119,112,141,0.12);
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.productos:hover {
+    transform: translateY(-5px);
+}
+
+/* IMAGENES */
+
+.productos img {
+    width: 300px;
+    height: 300px;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* NOMBRES */
+
+.productos h3 {
+    color: var(--morado);
+    font-size: 22px;
+}
+
+/* DESCRIPCIONES */
+
+.productos p {
+    color: var(--texto);
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* PRECIO */
+
+.numero {
+    color: #000000;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+}
+
+/* =================================
+   6. FOOTER
+================================= */
+
+footer {
+    background-color: var(--morado);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+footer h2,
+footer h3 {
+    color: white;
+}
+
+footer p {
+    color: white;
+    text-align: center;
+}
+
+/* REDES SOCIALES */
+
+.redes img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.redes img:hover {
+    transform: scale(1.2);
+}
+
+/* =================================
+   7. ADAPTACION A CELULARES
+================================= */
+
+@media (max-width: 650px) {
+
+    /* ENCABEZADO */
+
+    .encabezado {
+        grid-template-columns: 80px 1fr;
+        padding: 10px;
+    }
+
+    .encabezado img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .encabezado h1 {
+        font-size: 25px;
+    }
+
+    /* MVQ */
+
+    .MVQ {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "mision"
+            "vision"
+            "valores"
+            "quienes"
+            "esencia";
+
+        margin: 25px 15px;
+        padding: 20px;
+    }
+
+    .MVQ > .valores {
+        grid-column: 1;
+    }
+
+    /* PRODUCTOS */
+
+    body > div:has(> .productos) {
+        grid-template-columns: 1fr;
+        margin: 20px auto;
+    }
+
+    .productos {
+        width: 100%;
+    }
+
+    .productos img {
+        height: 250px;
+    }
+
+    /* TITULOS */
+
+    h2 {
+        font-size: 25px;
+    }
+}
